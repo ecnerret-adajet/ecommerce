@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Miriam+Libre:400,700');
+.page-title{
+	font-family: 'Miriam Libre', sans-serif;
+	font-weight: 400;
+}
+
+.hero-box{
+	background: url('../image/header-bg.jpg') no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+	margin: 0 ! important;
+	height: 200px;
+	padding: 30px 10px 10px 10px;
+	color: #fff;
+}
+
+.navbar{
+	margin-bottom: 0 ! important;
+}

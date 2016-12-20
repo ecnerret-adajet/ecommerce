@@ -12,6 +12,8 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/all.css" rel="stylesheet">
+    <link href="/semantic/semantic.min.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -21,8 +23,43 @@
     </script>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                       E-commerce
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+          <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -34,10 +71,7 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
+                 
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -47,7 +81,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" style="margin-right: 50px">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
@@ -77,15 +111,58 @@
                 </div>
             </div>
         </nav>
+        <div id="page-content-wrapper">
 
-        <div class="container">
+            <div class="container-fluid">
 
-        @yield('content')
+             @yield('content')
 
+    <!--             <div class="row">
+                    <div class="col-lg-12">
+
+
+
+                        <h1>Simple Sidebar</h1>
+                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div> -->
+            </div>
         </div>
+        <!-- /#page-content-wrapper -->
+
     </div>
+    <!-- /#wrapper -->
 
     <!-- Scripts -->
+    <script src="/js/jquery.js'"></script>
     <script src="/js/app.js"></script>
+    <script src="/semantic/semantic.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
+
+    <script>
+        Dropzone.options.addPhotosForm = {
+            paramName: 'photo',
+            maxFilesize: 4,
+            acceptedFiles: '.jpg, .jpeg, .png, .bmp'
+        };
+    </script>
+
+        <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+    <script type="text/javascript">
+        $('.ui.dropdown')
+        .dropdown();
+    </script>
+
 </body>
 </html>
