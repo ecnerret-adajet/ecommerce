@@ -17,3 +17,15 @@
 .navbar{
 	margin-bottom: 0 ! important;
 }
+
+.drop-style{
+	border: 2px dashed #000; 
+	height: 100px;
+	cursor: pointer;
+}
+
+.drop-style span{
+	text-align: center;
+	display: block;
+	margin: 30px auto;
+}

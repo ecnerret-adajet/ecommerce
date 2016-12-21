@@ -59,7 +59,7 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-          <nav class="navbar navbar-default navbar-static-top">
+          <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -136,21 +136,13 @@
     <!-- /#wrapper -->
 
     <!-- Scripts -->
-    <script src="/js/jquery.js'"></script>
+    <script src="/js/jquery.js"></script>
     <script src="/js/app.js"></script>
     <script src="/semantic/semantic.min.js"></script>
+    
+     @yield('scripts.footer')
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.js"></script>
-
-    <script>
-        Dropzone.options.addPhotosForm = {
-            paramName: 'photo',
-            maxFilesize: 4,
-            acceptedFiles: '.jpg, .jpeg, .png, .bmp'
-        };
-    </script>
-
-        <!-- Menu Toggle Script -->
+    <!-- Menu Toggle Script -->
     <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();

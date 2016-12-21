@@ -20,4 +20,22 @@ class Product extends Model
     	return $this->belongsTo('App\Category');
     }
 
+    public function getPriceAttribute($price)
+    {
+        return 'P '.number_format($price);
+    }
+
+    public function addPhoto(Photo $photo)
+    {
+        return $this->photos()->save($photo);
+    }
+
+    /**
+     * A Product is compose of many photos
+     */
+    public function photos()
+    {
+        return $this->hasMany('App\Photo');
+    }
+    
 }
